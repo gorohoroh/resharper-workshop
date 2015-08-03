@@ -28,7 +28,8 @@ namespace JetBrains.ReSharper.Koans.Editing
             //    ReSharper suggests alternatives that fit - result from local method, and NewValue field
             //    Accepting change only affects this method
 
-            //Console.WriteLine(value);
+            // FEATURE Replace unresolved code with existing code by choosing "Change all". VS2015 doesn't do this.
+            Console.WriteLine(value);
             //Console.WriteLine(value);
             //Console.WriteLine(value);
         }
