@@ -2,10 +2,13 @@
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+// FEATURE Remove redundant usings in file, folder, project or solution. VS2015 can only remove in file.
+using System.ComponentModel;
 
 namespace JetBrains.ReSharper.Koans.Inspections
 {
-    public class Highlights
+    // FEATURE Implement IDisposable. VS2015 is somewhat better as it provides an option to implement using the Disposable pattern
+    public class Highlights : IAsyncResult
     {
         public string ErrorHighlight()
         {
@@ -23,6 +26,7 @@ namespace JetBrains.ReSharper.Koans.Inspections
             // 2. Highlights code that is potentially incorrect and should be changed
             //    Shown as a blue squiggly underline
             //    Hover mouse over to see tooltip: "Expression is always true"
+            // FEATURE Detect and remove redundant conditions
             if (condition == 42)
                 Console.WriteLine("True");
         }
